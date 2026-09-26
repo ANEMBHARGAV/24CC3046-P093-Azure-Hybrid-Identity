@@ -63,14 +63,20 @@ Directory   PHS    Filtering
             |
             v
      Cloud Applications
-Main Components
-Azure Virtual Machine – Hosts the Windows Server environment.
-Active Directory Domain Services – Manages on-premises identities.
-Microsoft Entra Connect – Synchronizes identities.
-Password Hash Synchronisation – Supports cloud authentication.
-Microsoft Entra ID – Provides the cloud identity layer.
-Azure Virtual Network – Provides network connectivity.
-Project Workflow
+## Main Components
+
+- **Azure Virtual Machine** – Hosts the Windows Server environment.
+- **Active Directory Domain Services** – Manages on-premises identities.
+- **Microsoft Entra Connect** – Synchronizes identities.
+- **Password Hash Synchronisation** – Supports cloud authentication.
+- **Microsoft Entra ID** – Provides the cloud identity layer.
+- **Azure Virtual Network** – Provides network connectivity.
+
+---
+
+## Project Workflow
+
+```text
 Azure Infrastructure Setup
           ↓
 Windows Server Configuration
@@ -118,36 +124,56 @@ Test duplicate attributes
 Examine synchronization errors
 Check unwanted account synchronization
 Monitor and troubleshoot synchronization
-Troubleshooting Areas
+
+### 2. Then find this
+
+```markdown
+Troubleshooting Areas 
+ 
+The project focuses on:
+
+Replace from Troubleshooting Areas through the end of the README with:
+
+---
+
+## Troubleshooting Areas
 
 The project focuses on:
 
-Duplicate identity attributes
-Incorrect synchronization filtering
-Synchronization errors
-Unwanted account synchronization
+- Duplicate identity attributes
+- Incorrect synchronization filtering
+- Synchronization errors
+- Unwanted account synchronization
 
-Testing includes:
+### Testing Includes
 
-Active Directory verification
-Microsoft Entra ID verification
-Synchronization status
-Attribute verification
-Cloud authentication
-Filtering validation
-Expected Outcome
+- Active Directory verification
+- Microsoft Entra ID verification
+- Synchronization status
+- Attribute verification
+- Cloud authentication
+- Filtering validation
+
+---
+
+## Expected Outcome
 
 The completed project should demonstrate:
 
-A functioning Active Directory environment
-Integration with Microsoft Entra ID
-Controlled identity synchronization
-Password Hash Synchronisation
-Successful synchronization of selected users
-Cloud authentication using synchronized identities
-Synchronization filtering
-Troubleshooting of common synchronization issues
-Repository Structure
+- A functioning Active Directory environment
+- Integration with Microsoft Entra ID
+- Controlled identity synchronization
+- Password Hash Synchronisation
+- Successful synchronization of selected users
+- Cloud authentication using synchronized identities
+- Synchronization filtering
+- Troubleshooting of common synchronization issues
+
+---
+
+## Repository Structure
+
+```text
 24CC3046-P093-Azure-Hybrid-Identity/
 │
 ├── README.md
@@ -166,5 +192,3 @@ Project Code: 24CC3046-P093
 Project Title: Azure Hybrid Identity with Password Hash Synchronisation
 Domain: Identity and Cloud Computing
 Status: In Progress
-
-The repository will be updated with implementation steps, configurations, screenshots, testing results, and documentation as the project progresses
