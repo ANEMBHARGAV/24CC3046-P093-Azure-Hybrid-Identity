@@ -1,1 +1,33 @@
-
+PROJECT ABSTRACT 
+Azure Hybrid Identity with Password Hash Synchronisation 
+Project Area 
+Technology 
+Cloud Computing / Identity Management 
+Microsoft Azure, Microsoft Entra ID, Active Directory, Entra 
+Connect 
+Abstract 
+Modern organisations commonly maintain on-premises Active Directory environments while also using cloud-based 
+applications and services. Managing separate identities and passwords in these environments can increase 
+administrative effort and create an inconsistent user experience. This project, “Azure Hybrid Identity with Password 
+Hash Synchronisation,” proposes and demonstrates a hybrid identity architecture that connects an on-premises 
+Active Directory environment with Microsoft Entra ID using Microsoft Entra Connect and Password Hash 
+Synchronisation (PHS). 
+The project begins by establishing an Active Directory environment with test users and configuring the required 
+Microsoft Azure resources. Microsoft Entra ID is then prepared as the cloud identity platform, and Microsoft Entra 
+Connect is configured to synchronize selected on-premises identities to the cloud. Password Hash Synchronisation 
+enables users to use their existing organisational credentials when accessing supported cloud resources, without 
+requiring the original on-premises password to be transferred to Microsoft Entra ID. 
+The implementation also focuses on practical identity-management issues such as synchronization errors, duplicate 
+user attributes, and incorrect filtering configurations. Appropriate filtering is used to control which accounts are 
+synchronized, while synchronization and sign-in tests are performed to verify the expected behaviour. The project 
+therefore provides a practical view of how hybrid identity can reduce the need for separate cloud credentials while 
+maintaining controlled identity synchronization between on-premises and cloud environments. 
+Objectives 
+• Set up an on-premises Active Directory environment for testing. 
+• Connect on-premises identities with Microsoft Entra ID using Microsoft Entra Connect. 
+• Configure Password Hash Synchronisation for hybrid authentication. 
+• Verify user synchronization and cloud sign-in using synchronized identities. 
+• Identify and address common synchronization and filtering problems. 
+Keywords: Azure, Microsoft Entra ID, Active Directory, Microsoft Entra Connect, Password Hash Synchronisation, 
+Hybrid Identity, Cloud Authentication 
+Azure Hybrid Identity with Password Hash Synchronisation 
