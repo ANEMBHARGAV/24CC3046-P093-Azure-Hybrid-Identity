@@ -1,1 +1,66 @@
-
+FIVE PROJECT TASKS 
+Azure Hybrid Identity with Password Hash Synchronisation 
+The following five tasks represent the major implementation activities of the project. Each task has a defined 
+objective, implementation scope and expected result. Together, they cover the complete process of building, 
+configuring and validating the hybrid identity environment. 
+Task 1 — Set Up the Azure Environment 
+Objective: Establish the Azure infrastructure required to host the hybrid identity laboratory. 
+Detailed Explanation: The first task is to prepare a controlled Azure environment for the project. An 
+appropriate Azure subscription is selected and a dedicated resource group is created to keep all project 
+resources together. A virtual network and subnet are configured for the Windows Server virtual machine. A 
+Windows Server VM is then deployed with the resources required for the identity lab. Network access is 
+configured so that the server can be administered and can communicate with the required Microsoft identity 
+services. The deployment should be kept to the minimum resources necessary for the academic demonstration 
+to reduce unnecessary Azure usage. 
+Expected Result: A functioning Windows Server VM is available inside the Azure environment and is ready for 
+Active Directory and Microsoft Entra Connect configuration. 
+Task 2 — Configure Active Directory Domain Services 
+Objective: Create the on-premises identity source that will be synchronized with Microsoft Entra ID. 
+Detailed Explanation: Active Directory Domain Services (AD DS) is installed on the Windows Server and 
+configured as the domain controller for the laboratory domain. A test domain is established and appropriate 
+organizational units (OUs), security groups and user accounts are created. Test users represent the identities 
+that an organization would normally maintain in its on-premises directory. The directory structure is kept 
+organized so that synchronization filtering can be demonstrated later. User credentials are configured for the 
+test accounts and the domain is verified before proceeding to cloud synchronization. 
+Expected Result: A working Active Directory domain exists with test users, groups and OUs that can serve as 
+the source directory for the hybrid identity configuration. 
+Task 3 — Configure Microsoft Entra Connect and Password Hash Synchronisation 
+Objective: Establish synchronization between Active Directory and Microsoft Entra ID using Password Hash 
+Synchronisation. 
+Detailed Explanation: Microsoft Entra Connect is installed on the Windows Server and configured to connect 
+the local Active Directory environment to the Microsoft Entra tenant. During configuration, the required 
+administrative credentials and directory connection information are provided. Password Hash Synchronisation 
+is selected as the authentication method. Synchronization scope and filtering are configured so that only the 
+intended directory objects are included. An initial synchronization is then performed and its status is checked. 
+Password Hash Synchronisation synchronizes password-derived information rather than transferring the user's 
+original plaintext password to Microsoft Entra ID. 
+Expected Result: Microsoft Entra Connect successfully connects the two identity environments and begins 
+synchronizing the selected Active Directory objects and password-derived information to Microsoft Entra ID. 
+Task 4 — Synchronize and Verify User Identities 
+Objective: Confirm that synchronized identities are correctly created in Microsoft Entra ID and can be used for 
+cloud authentication. 
+Detailed Explanation: The fourth task validates the synchronization process. Selected test users and groups are 
+synchronized from Active Directory and checked in the Microsoft Entra admin environment. Important identity 
+attributes are reviewed to confirm that the synchronized objects correspond to the correct on-premises 
+accounts. Synchronization status and results are examined for errors or unexpected objects. A controlled sign-in 
+test is then performed using a synchronized test account to verify that Password Hash Synchronisation is 
+functioning as expected. Screenshots and test observations can be collected as evidence for the project report. 
+Expected Result: Selected Active Directory users and groups are visible in Microsoft Entra ID, synchronization 
+completes successfully, and the test user can authenticate to the intended cloud service using the synchronized 
+credentials. 
+Task 5 — Configure Filtering and Troubleshoot Synchronization 
+Objective: Control synchronization scope and demonstrate the identification and resolution of common hybrid 
+identity problems. 
+Detailed Explanation: The final task focuses on operational control and troubleshooting. Synchronization 
+filtering is configured so that only the required users, groups or organizational units are synchronized. The 
+project then examines common failure scenarios such as duplicate attributes, conflicting identity information, 
+incorrect filtering rules, synchronization failures and authentication problems. Microsoft Entra Connect 
+synchronization status and available diagnostic information are reviewed to identify the cause of an issue. 
+Configuration is corrected and synchronization is repeated to confirm that the problem has been resolved. This 
+task demonstrates that a hybrid identity environment requires both correct initial configuration and ongoing 
+monitoring. 
+Expected Result: Only intended identities are synchronized, common synchronization issues can be identified 
+and corrected, and the final environment operates with the expected identity and authentication behaviour. 
+Overall Task Flow 
+Azure Infrastructure → Active Directory → Entra Connect + PHS → Synchronization & Authentication 
+Testing → Filtering & Troubleshooting 
