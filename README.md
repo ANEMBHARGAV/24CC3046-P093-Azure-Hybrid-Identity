@@ -94,30 +94,36 @@ Identity Synchronization
 Authentication Verification
           ↓
 Filtering and Troubleshooting
+
 Project Tasks
+
 Task 1 — Azure Environment Setup
 Create resource group
 Create virtual network and subnet
 Deploy Windows Server VM
 Connect to the virtual machine
+
 Task 2 — Active Directory Configuration
 Install AD DS
 Create test domain
 Create Organizational Units
 Create test users and groups
 Verify Active Directory
+
 Task 3 — Microsoft Entra Connect with PHS
 Install Microsoft Entra Connect
 Connect Active Directory
 Configure synchronization
 Enable Password Hash Synchronisation
 Configure synchronization scope
+
 Task 4 — Identity Synchronization and Verification
 Run synchronization
 Check synchronized users
 Verify user attributes
 Test cloud authentication
 Confirm synchronized identity access
+
 Task 5 — Filtering and Troubleshooting
 Configure synchronization filtering
 Test duplicate attributes
@@ -187,6 +193,7 @@ The completed project should demonstrate:
 ├── tasks/
 ├── screenshots/
 └── results/
+
 Project Information
 Project Code: 24CC3046-P093
 Project Title: Azure Hybrid Identity with Password Hash Synchronisation
