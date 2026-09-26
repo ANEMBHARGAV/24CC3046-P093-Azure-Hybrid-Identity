@@ -78,58 +78,60 @@ Directory   PHS    Filtering
 
 ```text
 Azure Infrastructure Setup
-          ↓
+         ↓
 Windows Server Configuration
-          ↓
+         ↓
 Active Directory Setup
-          ↓
+         ↓
 Microsoft Entra ID Preparation
-          ↓
+         ↓
 Microsoft Entra Connect Configuration
-          ↓
+         ↓
 Password Hash Synchronisation
-          ↓
+         ↓
 Identity Synchronization
-          ↓
-Authentication Verification
-          ↓
+         ↓
+Cloud Authentication & MFA Verification
+         ↓
 Filtering and Troubleshooting
+         ↓
+Project Validation
 
 Project Tasks
-
 Task 1 — Azure Environment Setup
-Create resource group
-Create virtual network and subnet
-Deploy Windows Server VM
-Connect to the virtual machine
-
+- Created the required Azure environment.
+- Configured the virtual network and subnet.
+- Deployed the Windows Server virtual machine.
+- Connected to the Windows Server environment.
 Task 2 — Active Directory Configuration
-Install AD DS
-Create test domain
-Create Organizational Units
-Create test users and groups
-Verify Active Directory
-
+- Installed and configured Active Directory Domain Services.
+- Created the p093hybrid.local domain.
+- Configured Organizational Units for users, groups, and administration.
+- Created test users and groups.
+- Configured user UPNs using the Microsoft Entra tenant domain.
+- Verified Active Directory users and groups.
 Task 3 — Microsoft Entra Connect with PHS
-Install Microsoft Entra Connect
-Connect Active Directory
-Configure synchronization
-Enable Password Hash Synchronisation
-Configure synchronization scope
-
+- Installed Microsoft Entra Connect.
+- Connected the on-premises Active Directory forest to Microsoft Entra ID.
+- Configured the Microsoft Entra tenant connection.
+- Configured synchronization scope using selected Organizational Units.
+- Enabled Password Hash Synchronisation.
+- Completed Microsoft Entra Connect configuration successfully.
+- Started the initial synchronization process.
 Task 4 — Identity Synchronization and Verification
-Run synchronization
-Check synchronized users
-Verify user attributes
-Test cloud authentication
-Confirm synchronized identity access
-
+- Synchronized the selected on-premises users to Microsoft Entra ID.
+- Verified Test User1, Test User2, and Test User3 in Microsoft Entra ID.
+- Confirmed the synchronized users were enabled.
+- Verified the users had the expected Microsoft Entra UPN format.
+- Tested cloud authentication using a synchronized user.
+- Successfully completed authentication using the configured authentication app.
 Task 5 — Filtering and Troubleshooting
-Configure synchronization filtering
-Test duplicate attributes
-Examine synchronization errors
-Check unwanted account synchronization
-Monitor and troubleshoot synchronization
+- Configured synchronization using selected Active Directory Organizational Units.
+- Investigated UPN suffix configuration.
+- Resolved Microsoft Entra Connect administrative credential requirements.
+- Configured the required Enterprise Admin permissions for the on-premises AD account.
+- Verified synchronization after Microsoft Entra Connect configuration.
+- Confirmed that only the intended Organizational Units were included in synchronization.
 
 ### 2. Then find this
 
@@ -144,13 +146,81 @@ Replace from Troubleshooting Areas through the end of the README with:
 
 ## Troubleshooting Areas
 
-The project focuses on:
+During implementation, several configuration issues were identified and resolved.
 
-- Duplicate identity attributes
-- Incorrect synchronization filtering
-- Synchronization errors
-- Unwanted account synchronization
+### UPN Configuration
 
+The on-premises users were configured with the Microsoft Entra tenant UPN suffix:
+
+`@anembhargav02gmail.onmicrosoft.com`
+
+This allowed the synchronized users to appear in Microsoft Entra ID with the expected cloud sign-in format.
+
+### Microsoft Entra Connect Administrative Credentials
+
+Microsoft Entra Connect required an appropriate on-premises Active Directory administrative account when adding the AD directory.
+
+The required permissions were configured for the AD administrative account before continuing with synchronization.
+
+### Synchronization Scope
+
+Synchronization was restricted to the required Active Directory Organizational Units rather than synchronizing the entire domain.
+
+The selected OUs included:
+
+- `P093-Users`
+- `P093-Groups`
+
+### Synchronization Verification
+
+After Microsoft Entra Connect configuration completed, the synchronized users were verified in Microsoft Entra ID.
+
+The following test users were successfully synchronized:
+
+- `Test User1`
+- `Test User2`
+- `Test User3`
+
+### Authentication Verification
+
+A synchronized test user successfully signed in using the Microsoft Entra cloud identity, and authentication using the configured authentication app was also successfully verified.
+
+---
+
+## Testing Results
+
+| Test | Result |
+|---|---|
+| Active Directory configuration | Passed |
+| Microsoft Entra Connect installation | Passed |
+| AD directory connection | Passed |
+| Selected OU synchronization | Passed |
+| Password Hash Synchronisation | Passed |
+| Test User1 synchronization | Passed |
+| Test User2 synchronization | Passed |
+| Test User3 synchronization | Passed |
+| Microsoft Entra cloud sign-in | Passed |
+| Authentication app verification | Passed |
+
+---
+
+## Final Outcome
+
+The Azure Hybrid Identity environment was successfully implemented.
+
+The completed solution provides:
+
+- On-premises Active Directory
+- Microsoft Entra ID integration
+- Microsoft Entra Connect synchronization
+- Password Hash Synchronisation
+- Controlled synchronization scope
+- Synchronization of selected test users
+- Cloud authentication using synchronized identities
+- Authentication app verification
+- Verification and troubleshooting of the hybrid identity configuration
+
+The final implementation demonstrates a working hybrid identity environment connecting on-premises Active Directory with Microsoft Entra ID.
 ### Testing Includes
 
 - Active Directory verification
@@ -162,9 +232,9 @@ The project focuses on:
 
 ---
 
-## Expected Outcome
+## ## Final Outcome
 
-The completed project should demonstrate:
+The completed project demonstrate:
 
 - A functioning Active Directory environment
 - Integration with Microsoft Entra ID
@@ -194,8 +264,14 @@ The completed project should demonstrate:
 ├── screenshots/
 └── results/
 
-Project Information
-Project Code: 24CC3046-P093
-Project Title: Azure Hybrid Identity with Password Hash Synchronisation
-Domain: Identity and Cloud Computing
-Status: In Progress
+## Project Information
+
+- **Project Code:** 24CC3046-P093
+- **Project Title:** Azure Hybrid Identity with Password Hash Synchronisation
+- **Domain:** Identity and Cloud Computing
+- **Status:** Completed
+- **Microsoft Entra Connect:** Configured Successfully
+- **Password Hash Synchronisation:** Enabled
+- **Synchronization:** Successfully Verified
+- **Cloud Authentication:** Successfully Verified
+- **MFA / Authentication App:** Successfully Verified
