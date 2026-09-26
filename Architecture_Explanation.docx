@@ -1,1 +1,62 @@
+Architecture Diagram Explanation
+Azure Hybrid Identity with Password Hash Synchronisation
+Short Explanation
 
+The architecture connects an on-premises Active Directory environment with Microsoft Entra ID using Microsoft Entra Connect. User, group, and organizational unit information is synchronized from Active Directory to the cloud. Password Hash Synchronisation (PHS) synchronizes password-derived information so users can authenticate to supported cloud services using their existing credentials. Microsoft Entra ID then provides cloud authentication and access to integrated applications and Azure resources.
+
+Detailed Architecture Explanation
+
+1. On-Premises Active Directory
+
+The architecture starts with an on-premises Windows Server VM running Active Directory Domain Services (AD DS). AD DS acts as the organization's local identity store and contains users, groups, organizational units (OUs), and passwords. Test user accounts can be created here to demonstrate the hybrid identity setup.
+
+2. Microsoft Entra Connect
+
+Microsoft Entra Connect acts as the identity synchronization bridge between on-premises Active Directory and Microsoft Entra ID. It reads selected users, groups, and organizational information from AD DS and synchronizes the required identity attributes to the cloud.
+
+The architecture also includes Synchronization Filtering, which controls which identities are allowed to synchronize from the on-premises environment.
+
+3. Password Hash Synchronisation (PHS)
+
+Password Hash Synchronisation (PHS) is used to provide cloud authentication based on the user's existing password. Microsoft Entra Connect processes the password information and synchronizes password-derived information to Microsoft Entra ID. The original plaintext password is not transferred to Microsoft Entra ID.
+
+This allows users to sign in to supported cloud services using the same credentials they use in the on-premises Active Directory environment.
+
+4. Microsoft Entra ID
+
+Microsoft Entra ID acts as the cloud identity platform. After synchronization, selected on-premises users and groups appear as synchronized identities in the Entra tenant.
+
+Microsoft Entra ID performs cloud authentication and provides identity-based access to integrated applications and Azure resources.
+
+5. Cloud Applications and Resources
+
+The final layer contains the cloud services and applications that use Microsoft Entra ID for authentication and access control. These include:
+
+Microsoft 365
+Azure Resources
+Other Cloud Applications
+
+Users can authenticate through Microsoft Entra ID rather than maintaining separate credentials for each integrated cloud service.
+
+6. Synchronization Filtering and Troubleshooting
+
+The architecture also addresses common hybrid identity problems. Duplicate attributes can result in synchronization errors, while incorrect filtering configuration can cause unwanted accounts to synchronize.
+
+The project therefore considers synchronization monitoring and troubleshooting for issues such as:
+
+Duplicate attributes
+Filtering errors
+Synchronization failures
+Unwanted account synchronization
+
+These controls help ensure that only the intended identities are synchronized to the cloud.
+
+Overall Data Flow
+
+Active Directory → Microsoft Entra Connect → Directory Synchronization → Password Hash Synchronisation → Microsoft Entra ID → Cloud Applications
+
+The architecture also includes a secure HTTPS connection between the on-premises environment, Microsoft Entra Connect, and Microsoft Entra ID.
+
+Overall Architecture
+
+The architecture demonstrates how an organization can maintain its existing on-premises Active Directory while extending its identity system to Microsoft Entra ID and cloud services. Microsoft Entra Connect provides synchronization, PHS enables cloud authentication using existing credentials, and Microsoft Entra ID provides centralized identity and access to cloud applications and resources.
